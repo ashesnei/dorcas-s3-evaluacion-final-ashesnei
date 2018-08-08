@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/CharacterCardDetail.css';
 
 class CharacterDetail extends React.Component {
 
@@ -22,10 +23,12 @@ class CharacterDetail extends React.Component {
           </div>
           <div className="character-card-detail__info">
             <h2 className="character-card-detail__info-name">{this.props.hpcharacters[this.props.match.params.id].name}</h2>
-            <p className="character-card-detail__info-birth">nacimiento: {this.props.hpcharacters[this.props.match.params.id].yearOfBirth}</p>
-            <p className="character-card-detail__info-house">Casa: {this.props.hpcharacters[this.props.match.params.id].house}</p>
-            <p className="character-card-detail__info-patronus">patronus: {this.props.hpcharacters[this.props.match.params.id].patronus}</p>
-            {this.alive()}
+            <div className="character-card-detail__description">
+              <p className="character-card-detail__info-birth">nacimiento: {this.props.hpcharacters[this.props.match.params.id].yearOfBirth}</p>
+              <p className="character-card-detail__info-house">Casa: {this.props.hpcharacters[this.props.match.params.id].house}</p>
+              <p className="character-card-detail__info-patronus">patronus: {this.props.hpcharacters[this.props.match.params.id].patronus}</p>
+              {this.alive()}
+            </div>
           </div>
         </div>
       );

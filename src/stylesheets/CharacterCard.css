@@ -32,11 +32,14 @@
 
 .character-card__info {
   width: 100%;
+  color: white;
   display: flex;
   flex-direction: column;
   align-content: space-between;
   text-transform: capitalize;
-  text-decoration: none; }
+  text-decoration: none;
+  text-decoration-style: none; }
 
 .character-card__info-name {
-  text-decoration: none; }
+  color: white;
+  text-decoration-style: none; }

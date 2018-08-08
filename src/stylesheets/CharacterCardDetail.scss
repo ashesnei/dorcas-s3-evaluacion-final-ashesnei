@@ -1,0 +1,45 @@
+
+.listCharacter__character-card-detail{
+    text-align: center;
+    display: flex;
+    width: 800px;
+    height: 450px;
+    background-color: coral;
+    color: white;
+}
+.character-card-detail__img-box{
+    height: 100%;
+}
+.character-card-detail__img-box--img{
+    height: 100%;
+}
+.character-card-detail__info{
+    display: flex;
+    padding: 20px 20px;
+    width: 100%;
+    flex-direction: column; 
+    margin-left: 20px;
+    text-transform: capitalize;
+    align-items: center;
+    text-align: left;
+}
+.character-card-detail__info-name{
+    text-align: center;
+    align-self: auto;
+}
+.character-card-detail__description{
+    align-self: flex-start;
+    margin-top: 30px;
+}
+.character-card-detail__info-birth{
+
+}
+.character-card-detail__info-house{
+
+}
+.character-card-detail__info-patronus{
+
+}
+.character-card-detail__info-alive{
+    
+}
