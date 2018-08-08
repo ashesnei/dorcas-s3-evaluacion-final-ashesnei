@@ -1,11 +1,26 @@
+.App {
+  text-align: center;
+  margin-top: 30px;
+}
+.title {
+  line-height: 50px;
+}
 .listCharacter {
-
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
 }
 .listCharacter__item{
 
 }
 .listCharacter__character-card{
 
+}
+.character-card__img-box{
+
+}
+.character-card__img-box--img{
+  height: 225px;
 }
 .character-card__info{
 
@@ -14,5 +29,5 @@
 
 }
 .character-card__info-house{
-  
+
 }

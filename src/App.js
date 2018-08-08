@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
+import CharacterCardDetail from './components/CharacterCardDetail';
 import './App.css';
 
 
@@ -7,44 +10,44 @@ class App extends Component {
     super(props)
 
     this.state = {
-      hpcharacters: []
+      hpcharacters: [],
+      searchCharacter: ""
     }
+    this.searchCharacterMetod = this.searchCharacterMetod.bind(this);
   }
   componentDidMount() {
-    this.giveMeCharacters()
+    this.giveMeCharacters();
   }
 
   giveMeCharacters() {
     fetch("https://hp-api.herokuapp.com/api/characters/")
       .then(response => response.json())
       .then(data => {
+        let indexado = [];
+        for(let i=0; i< data.length; i++) {
+          indexado[i] = {...data[i], id:i};
+        }
         this.setState({
-          hpcharacters: data
+          hpcharacters: indexado
         });
       });
   }
+
+  searchCharacterMetod(e) {
+    const character = e.currentTarget.value;
+    this.setState({
+      searchCharacter: character
+    });
+  }
+
+
   render() {
     return (
       <div className="App">
-        <ul className="listCharacter">
-          {
-            this.state.hpcharacters.map(item => {
-              return (
-                <li className="listCharacter__item">
-                  <div className="listCharacter__character-card">
-                    <div chassName="character-card__img-box">
-                      <img src={item.image} alt={item.name}/>
-                    </div>
-                    <div className="character-card__info"> 
-                      <h2 className="character-card__info-name">{item.name}</h2>
-                      <h3 className="character-card__info-house">{item.house}</h3>
-                    </div>
-                  </div>
-                </li>
-              )
-            })
-          }
-        </ul>
+        <Switch>
+          <Route exact path="/" render={() => <Home searchCharacterMetod={this.searchCharacterMetod} hpcharacters={this.state.hpcharacters} searchCharacter={this.state.searchCharacter} />} />
+          <Route path="/CharacterCard/:id" render={(props) => <CharacterCardDetail match={props.match} hpcharacters={this.state.hpcharacters} />} />
+        </Switch>
       </div>
     );
   }
