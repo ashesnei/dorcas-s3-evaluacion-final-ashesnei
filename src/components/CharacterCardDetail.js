@@ -1,26 +1,40 @@
 import React from 'react';
 
 class CharacterDetail extends React.Component {
+
+  alive() {
+    const live = '🧙‍';
+    const death = '💀';
+
+    if (this.props.hpcharacters[this.props.match.params.id].alive === true) {
+      return <p className="character-card-detail__info-alive">{live}</p>
+    } else {
+      return <p className="character-card-detail__info-alive">{death}</p>
+    }
+  }
   render() {
 
     if (this.props.hpcharacters.length >= 1) {
       return (
-        <div className="listCharacter__character-card">
-          <div className="character-card__img-box">
-            <img className="character-card__img-box--img" src={this.props.hpcharacters[this.props.match.params.id].image} alt={this.props.hpcharacters[this.props.match.params.id].name} />
+        <div className="listCharacter__character-card-detail">
+          <div className="character-card-detail__img-box">
+            <img className="character-card-detail__img-box--img" src={this.props.hpcharacters[this.props.match.params.id].image} alt={this.props.hpcharacters[this.props.match.params.id].name} />
           </div>
-          <div className="character-card__info">
-            <h2 className="character-card__info-name">{this.props.hpcharacters[this.props.match.params.id].name}</h2>
-            <h3 className="character-card__info-house">{this.props.hpcharacters[this.props.match.params.id].house}</h3>
+          <div className="character-card-detail__info">
+            <h2 className="character-card-detail__info-name">{this.props.hpcharacters[this.props.match.params.id].name}</h2>
+            <p className="character-card-detail__info-birth">nacimiento: {this.props.hpcharacters[this.props.match.params.id].yearOfBirth}</p>
+            <p className="character-card-detail__info-house">Casa: {this.props.hpcharacters[this.props.match.params.id].house}</p>
+            <p className="character-card-detail__info-patronus">patronus: {this.props.hpcharacters[this.props.match.params.id].patronus}</p>
+            {this.alive()}
           </div>
         </div>
       );
     }
     else {
       return (
-      <div>
-        <p>cargando...</p>
-      </div>
+        <div>
+          <p>cargando...</p>
+        </div>
       );
     }
   }

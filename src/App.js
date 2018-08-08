@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import CharacterCardDetail from './components/CharacterCardDetail';
-import './App.css';
+import './stylesheets/App.css';
 
 
 class App extends Component {
