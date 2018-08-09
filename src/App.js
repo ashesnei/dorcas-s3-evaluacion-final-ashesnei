@@ -15,8 +15,20 @@ class App extends Component {
     }
     this.searchCharacterMetod = this.searchCharacterMetod.bind(this);
   }
+
   componentDidMount() {
-    this.giveMeCharacters();
+    this.verifyLocalStorage();
+  }
+  verifyLocalStorage() {
+    if (localStorage.getItem('listCharactersStorage')) {
+      const charactersStorage = JSON.parse(localStorage.getItem('listCharactersStorage'));
+      this.setState({
+        hpcharacters: charactersStorage
+      })
+    }
+    else {
+      this.giveMeCharacters();
+    }
   }
 
   giveMeCharacters() {
@@ -24,12 +36,13 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         let indexado = [];
-        for(let i=0; i< data.length; i++) {
-          indexado[i] = {...data[i], id:i};
+        for (let i = 0; i < data.length; i++) {
+          indexado[i] = { ...data[i], id: i };
         }
         this.setState({
           hpcharacters: indexado
         });
+        localStorage.setItem("listCharactersStorage", JSON.stringify(indexado));
       });
   }
 
