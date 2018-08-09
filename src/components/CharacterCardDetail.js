@@ -20,7 +20,7 @@ class CharacterDetail extends React.Component {
     if (this.props.hpcharacters.length >= 1) {
       return (
         <React.Fragment>
-        <Link className="linkBack" to="/">Atras</Link>
+        <Link className="linkBack" to="/">◀ ️Back</Link>
         <div className="listCharacter__character-card-detail">
           <div className="character-card-detail__img-box" style={{backgroundImage:'url(' + this.props.hpcharacters[this.props.match.params.id].image + ')'}}>
             <img className="character-card-detail__img-box--img" src={this.props.hpcharacters[this.props.match.params.id].image} alt={this.props.hpcharacters[this.props.match.params.id].name} />
