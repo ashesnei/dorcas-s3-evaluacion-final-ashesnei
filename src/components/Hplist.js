@@ -14,7 +14,7 @@ class Hplist extends React.Component {
             .map(item => {
               return (
                 <li className="listCharacter__item" key={item.id}>
-                  <Link to={`/CharacterCard/${item.id}`} ><CharacterCard item={item} /></Link>
+                  <Link to={`/CharacterCard/${item.id}`} className="linkcard"><CharacterCard item={item} /></Link>
                 </li>
               )
             })

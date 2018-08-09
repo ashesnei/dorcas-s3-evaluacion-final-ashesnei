@@ -7,10 +7,15 @@
   color: white; }
 
 .character-card-detail__img-box {
-  height: 100%; }
+  height: 100%;
+  width: 500px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .character-card-detail__img-box--img {
-  height: 100%; }
+  height: 0;
+  width: 0; }
 
 .character-card-detail__info {
   display: flex;
@@ -29,3 +34,25 @@
 .character-card-detail__description {
   align-self: flex-start;
   margin-top: 30px; }
+
+@media all and (max-width: 500px) {
+  .listCharacter__character-card-detail {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100vw;
+    height: 700px;
+    background-color: coral;
+    color: white; }
+  .character-card-detail__img-box {
+    border: 1px solid black; }
+  .character-card-detail__info {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center; }
+  .character-card-detail__description {
+    align-self: center;
+    margin-top: 10px; } }
