@@ -1,5 +1,7 @@
 import React from 'react';
 import '../stylesheets/CharacterCardDetail.css';
+import { Link } from 'react-router-dom';
+
 
 class CharacterDetail extends React.Component {
 
@@ -17,6 +19,8 @@ class CharacterDetail extends React.Component {
 
     if (this.props.hpcharacters.length >= 1) {
       return (
+        <React.Fragment>
+        <Link className="linkBack" to="/"><button>Atras</button></Link>
         <div className="listCharacter__character-card-detail">
           <div className="character-card-detail__img-box">
             <img className="character-card-detail__img-box--img" src={this.props.hpcharacters[this.props.match.params.id].image} alt={this.props.hpcharacters[this.props.match.params.id].name} />
@@ -31,6 +35,7 @@ class CharacterDetail extends React.Component {
             </div>
           </div>
         </div>
+        </React.Fragment>
       );
     }
     else {

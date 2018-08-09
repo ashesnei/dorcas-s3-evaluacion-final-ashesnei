@@ -6,7 +6,7 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Search searchCharacterMetod={this.props.searchCharacterMetod} />
+        <Search searchCharacterMetod={this.props.searchCharacterMetod} searchCharacter={this.props.searchCharacter} />
         <Hplist hpcharacters={this.props.hpcharacters} searchCharacter={this.props.searchCharacter} />
       </React.Fragment>
     );
