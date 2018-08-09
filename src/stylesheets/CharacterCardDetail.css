@@ -11,7 +11,8 @@
   width: 800px;
   height: 450px;
   background-color: coral;
-  color: white; }
+  color: white;
+  border: 1px solid black; }
 
 .character-card-detail__img-box {
   height: 100%;

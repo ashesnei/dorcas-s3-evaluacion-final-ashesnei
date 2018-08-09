@@ -12,6 +12,7 @@
     height: 450px;
     background-color: coral;
     color: white;
+    border: 1px solid black;
 }
 .character-card-detail__img-box{
     height: 100%;
@@ -55,25 +56,21 @@
     color: white;
   }
 .character-card-detail__img-box{
-  border: 1px solid black;
+    border: 1px solid black;
 
 }
-.character-card-detail__img-box--img{
-}
+
 .character-card-detail__info{
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-
-}
-.character-card-detail__info-name{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
 }
 .character-card-detail__description{
-  align-self: center;
-  margin-top: 10px;
+    align-self: center;
+    margin-top: 10px;
 
 }
 }

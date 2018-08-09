@@ -68,24 +68,24 @@
 }
 .character-card__info-house{
   font-size: 20px;
+}
+
+@media all and (min-width:720px) {
+
+.listCharacter {
+  margin: auto;
+  margin-top: 30px;
+  width: 95vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 600px;
+  list-style: none;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   }
-
-  @media all and (min-width:720px) {
-
-    .listCharacter {
-      margin: auto;
-      margin-top: 30px;
-      width: 95vw;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-auto-rows: 600px;
-      list-style: none;
-      grid-column-gap: 30px;
-      grid-row-gap: 30px;
-    }
-    .input {
-      width: 400px;
-      height: 30px;
-      font-size: 30px;
-    }
+.input {
+  width: 400px;
+  height: 30px;
+  font-size: 30px;
+  }
 }
