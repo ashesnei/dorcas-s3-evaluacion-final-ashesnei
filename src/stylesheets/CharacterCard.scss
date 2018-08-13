@@ -9,6 +9,7 @@
   list-style: none;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+  text-decoration: none;
 }
 .listCharacter__item{
   border: 1px solid black;
@@ -39,11 +40,10 @@
   align-content: space-between;
   text-transform: capitalize;
   text-decoration: none; 
-  text-decoration-style: none;
   }
 .character-card__info-name{  
   color: white;
-  text-decoration-style: none;
+  text-decoration: none;
 }
 .character-card__info-house{
     
