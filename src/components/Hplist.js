@@ -11,6 +11,22 @@ class Hplist extends React.Component {
             .filter(item => {
               return item.name.toLowerCase().includes(this.props.searchCharacter.toLowerCase());
             })
+            .filter(item => {
+              if (this.props.house === "") {
+                return true;
+              } else {
+                return item.house === this.props.house;
+              }
+            })
+            .filter(item => {
+              if (this.props.alive === "") {
+                return true;
+              } else if (this.props.alive === "muerto") {
+                return item.alive === false;
+              } else {
+                return item.alive === true;
+              }
+            })
             .map(item => {
               return (
                 <li className="listCharacter__item" key={item.id}>

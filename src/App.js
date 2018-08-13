@@ -11,9 +11,13 @@ class App extends Component {
 
     this.state = {
       hpcharacters: [],
-      searchCharacter: ""
+      searchCharacter: "",
+      searchHouse:"",
+      alive: ""
     }
     this.searchCharacterMetod = this.searchCharacterMetod.bind(this);
+    this.searchHouseMetod = this.searchHouseMetod.bind(this);
+    this.searchAliveMetod = this.searchAliveMetod.bind(this);
   }
   componentDidMount() {
     this.giveMeCharacters();
@@ -39,13 +43,25 @@ class App extends Component {
       searchCharacter: character
     });
   }
+  searchAliveMetod(e) {
+    const alive = e.currentTarget.value;
+    this.setState({
+      alive: alive
+    });
+  }
+  searchHouseMetod(e) {
+    const house = e.currentTarget.value;
+    this.setState({
+      searchHouse: house
+    });
+  }
 
 
   render() {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" render={() => <Home searchCharacterMetod={this.searchCharacterMetod} hpcharacters={this.state.hpcharacters} searchCharacter={this.state.searchCharacter} />} />
+          <Route exact path="/" render={() => <Home searchCharacterMetod={this.searchCharacterMetod} searchAliveMetod={this.searchAliveMetod} alive={this.state.alive} hpcharacters={this.state.hpcharacters} searchCharacter={this.state.searchCharacter} house={this.state.searchHouse} searchHouse={this.searchHouseMetod} />} />
           <Route path="/CharacterCard/:id" render={(props) => <CharacterCardDetail match={props.match} hpcharacters={this.state.hpcharacters} />} />
         </Switch>
       </div>
